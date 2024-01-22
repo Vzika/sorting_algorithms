@@ -1,5 +1,8 @@
-sorting algorithm project by:
+Intro..to sorting algorithms.  
+The different sorting algorithms  
+Time and space complexity of different sorting algotithms.  
+Determine the best algorithm for a problem.  
 
-Ndukauba Ngozi and
-Noel Reeds
-
+Contributors:
+			Ndukauba Ngozi
+			Noel Reeds

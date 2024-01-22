@@ -15,7 +15,7 @@ void swap(int *a, int *b)
 }
 
 /**
- * bubble_sort - sorts intehers by bubling out the highest
+ * buble_sort - sorts intehers by bubling out the highest
  * @array: the array to be sorted
  * @size: the size of the array
  * Return: None
@@ -32,7 +32,7 @@ void bubble_sort(int *array, size_t size)
 	{
 		flag = 0;
 
-		for (j = 0; j < size - i - 1; j++)
+		for (j = 0; j < size - i; j++)
 		{
 			if (array[j] > array[j + 1])
 			{
