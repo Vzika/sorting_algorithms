@@ -1,60 +1,71 @@
-#include <stdio.h>
 #include "sort.h"
-#include <stdlib.h>
-int max(int array[], int n)
+/**
+ * max - funtion that calculates the maximum integer
+ * @array: the array from which the maximum is found
+ * @size: size of the array
+ * Return: returns maximum value
+ */
+int max(int *array, int size)
 {
 	int max_value = array[0];
 	int i;
-	for(i =0; i< n; i++)
+
+	for (i = 0; i < size; i++)
 	{
-		if(array[i] > max_value)
+		if (array[i] > max_value)
 			max_value = array[i];
 	}
-	return max_value;
-
+	return (max_value);
 }
 
-
+/**
+ * counting_sort - sorts algorithm using counting method
+ * @array: array to be sorted
+ * @size: size of the array
+ * Return: Returns None
+ */
 void counting_sort(int *array, size_t size)
 {
-	int k;
-	int i;
-	size_t j;
-	int *count_arr;
-	int *new_arr;
-	k = max(array,size);
+	int k, i, j;
+	int *count_arr, *new_arr;
 
-	count_arr = (int*)malloc((k+1) * sizeof(int));
-	new_arr = (int *)malloc(size * sizeof(int));
-	
-	if (new_arr == NULL || count_arr ==NULL)
+	if (array == NULL || size < 2)
+		return;
+	new_arr = (int *)malloc(sizeof(int) * size);
+	if (new_arr == NULL)
 	{
-        	exit(1);
+		return;
 	}
-
-	for(i = 0; i < k; i++)
+	k = max(array, size);
+	count_arr = (int *)malloc(sizeof(int) * (k + 1));
+	if (count_arr == NULL)
+	{
+		free(new_arr);
+		return;
+	}
+	for (i = 0; i < (k + 1); i++)
 	{
 		count_arr[i] = 0;
 	}
-	for(j = 0; j < size; j++)
+	for (j = 0; j < (int)size; j++)
 	{
 		count_arr[array[j]]++;
 	}
-	print_array(array,size);
-	for(i =1; i <=k; i++)
+	for (i = 0; i < (k + 1); i++)
 	{
 		count_arr[i] = count_arr[i] + count_arr[i - 1];
 	}
-	for(i = size-1; i >= 0; i --)
+	print_array(count_arr, k + 1);
+	for (i = size - 1; i >= 0; i--)
 	{
 		new_arr[--count_arr[array[i]]] = array[i];
 	}
-	for(j = 0; j<size; j++)
+	for (j = 0; j < (int)size; j++)
 	{
 		array[j] = new_arr[j];
-		print_array(array,size);
 	}
-
 	free(new_arr);
-	free (count_arr);
+	free(count_arr);
 }
+
+
