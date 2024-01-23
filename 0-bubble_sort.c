@@ -1,8 +1,8 @@
 #include "sort.h"
 /**
- * swap - a function that swaps two integers
- * @a: fist integer to be swapped
- * @b: second integer to be swapped
+ * swap - A function that swaps two integers
+ * @a: Fist integer to be swapped
+ * @b: Second integer to be swapped
  * Return: None
  *
  */
@@ -15,9 +15,9 @@ void swap(int *a, int *b)
 }
 
 /**
- * bubble_sort - sorts intehers by bubling out the highest
- * @array: the array to be sorted
- * @size: the size of the array
+ * bubble_sort - Sorts intehers by bubling out the highest
+ * @array: The array to be sorted
+ * @size: The size of the array
  * Return: None
  *
  */
