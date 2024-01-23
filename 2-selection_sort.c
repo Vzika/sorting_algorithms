@@ -1,4 +1,5 @@
 #include "sort.h"
+#include <stdio.h>
 
 /**
  *swap - swaps two integers
@@ -20,7 +21,6 @@ void swap(int *a, int *b)
  *@size: size of the array to be sorted
  *Return: None
  */
-
 void selection_sort(int *array, size_t size)
 {
 	size_t i;
@@ -44,7 +44,4 @@ void selection_sort(int *array, size_t size)
 		}
 		print_array(array, size);
 	}
-
-
-
 }
