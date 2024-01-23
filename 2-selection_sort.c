@@ -2,10 +2,10 @@
 #include <stdio.h>
 
 /**
- *swap - swaps two integers
- *@a: first integer to swap
- *@b: second integer to swap
- *Return: None
+ * swap - Swaps two integers
+ * @a: First integer to swap
+ * @b: Second integer to swap
+ * Return: None
  */
 
 void swap(int *a, int *b)
@@ -16,10 +16,10 @@ void swap(int *a, int *b)
 }
 
 /**
- *selection_sort -  sorts algorithm using selection method
- *@array: array to be sorted
- *@size: size of the array to be sorted
- *Return: None
+ * selection_sort -  Sorts algorithm using selection method
+ * @array: Array to be sorted
+ * @size: Size of the array to be sorted
+ * Return: None
  */
 void selection_sort(int *array, size_t size)
 {
