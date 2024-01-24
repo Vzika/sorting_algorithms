@@ -2,13 +2,13 @@
 
 /**
  * selection_sort - function that sorts an array of integers
- * @array: array of integers
- * @size: size of the array
+ * @array: array of integers to be sorted 
+ * @size: size of the array to be sorted
  *
  * Description: In ascending, order print the array after each time
  *  you swap two elements
  *
- * Return: Nothing
+ * Return: None
 */
 
 void selection_sort(int *array, size_t size)

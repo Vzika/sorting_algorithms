@@ -24,7 +24,7 @@ int max(int array[], int n);
 void bubble_sort(int *array, size_t size);
 void selection_sort(int *array, size_t size);
 void counting_sort(int *array, size_t size);
-void heapify(int array[], size_t size, size_t i);
+void heapify(int *array, size_t size, size_t base, size_t root);
 void heap_sort(int *array, size_t size);
 void count_sort(int arr[], int n, int pos);
 void radix_sort(int *array, size_t size);
