@@ -5,9 +5,7 @@
  *
  *@array: pointer to an array.
  *
- *@lb: lower bound of the array.
- *
- *@ub: upper bound of the array.
+ *@size: size of array
  *
  *Return: Returns current index..
  */
@@ -19,7 +17,7 @@ int lomuto_partition(int *array, size_t size)
 
 	for (i = 1; i < size - 1; i++)
 	{
-		if (pivot >= array[i])
+		if (pivot >= array[i] && array[j] > array[i])
 		{
 			temp = array[j];
 			array[j] = array[i];
@@ -29,9 +27,12 @@ int lomuto_partition(int *array, size_t size)
 	}
 	if (size == 2 && array[0] < array[1])
 		return (j);
-	temp = array[j];
-	array[j] = pivot;
-	array[size- 1] = temp;
+	if (pivot < array[j])
+	{
+		temp = array[j];
+		array[j] = pivot;
+		array[size - 1] = temp;
+	}
 	return (j);
 }
 
