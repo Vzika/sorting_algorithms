@@ -21,9 +21,9 @@
  */
 typedef struct listint_s
 {
-    const int n;
-    struct listint_s *prev;
-    struct listint_s *next;
+	const int n;
+	struct listint_s *prev;
+	struct listint_s *next;
 } listint_t;
 void print_array(const int *array, size_t size);
 void print_list(const listint_t *list);
@@ -36,7 +36,8 @@ void heapify(int *array, size_t size, size_t base, size_t root);
 void heap_sort(int *array, size_t size);
 void count_sort(int arr[], int n, int pos);
 void radix_sort(int *array, size_t size);
-void bitonic_merge(int *array, size_t size, size_t start, size_t seq, char flow);
+void bitonic_merge(int *array, size_t size, size_t start, \n
+					size_t seq, char flow);
 void bitonic_seq(int *array, size_t size, size_t start, size_t seq, char flow);
 void bitonic_sort(int *array, size_t size);
 void counting_sort(int *array, size_t size);
