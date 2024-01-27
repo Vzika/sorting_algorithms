@@ -1,6 +1,8 @@
 #ifndef SORT_H
 #define SORT_H
-#include <stdio.h>
+
+/*---HEADER---*/
+#include<stdio.h>
 #include <stddef.h>
 #include <stdlib.h>
 
@@ -37,4 +39,7 @@ void radix_sort(int *array, size_t size);
 void bitonic_merge(int *array, size_t size, size_t start, size_t seq, char flow);
 void bitonic_seq(int *array, size_t size, size_t start, size_t seq, char flow);
 void bitonic_sort(int *array, size_t size);
+void counting_sort(int *array, size_t size);
+int lomuto_partition(int *array, size_t size);
+void quick_sort(int *array, size_t size);
 #endif
