@@ -7,13 +7,17 @@
  *
  *@size: size of array
  *
+ *@lb: lowerbound
+ *
+ *@ub: upperbound
+ *
  *Return: Returns current index..
  */
 int lomuto_partition(int *array, size_t size, int lb, int ub)
 {
 	int *pivot, j;
 	int i, temp, *a, *b;
-	
+
 	pivot = array + ub;
 	for (i = j = lb; i < ub; i++)
 	{
@@ -62,6 +66,17 @@ void quick_sort(int *array, size_t size)
 	}
 }
 
+/**
+ * lomuto_sort - sorts an array recursively.
+ *
+ *@array: array to be sorted
+ *
+ *@size: size of array
+ *
+ *@lb: lowerbound
+ *
+ *@ub: upperbound
+ */
 void lomuto_sort(int *array, size_t size, int lb, int ub)
 {
 	int index2;
