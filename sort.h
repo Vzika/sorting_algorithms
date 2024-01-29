@@ -41,7 +41,8 @@ void bitonic_merge(int *array, size_t size, size_t start, size_t seq,
 		char flow);
 void bitonic_sort(int *array, size_t size);
 void counting_sort(int *array, size_t size);
-int lomuto_partition(int *array, size_t size);
+int lomuto_partition(int *array, size_t size, int lb, int ub);
 void quick_sort(int *array, size_t size);
 void shell_sort(int *array, size_t size);
+void lomuto_sort(int *array, size_t size, int lb, int ub);
 #endif
