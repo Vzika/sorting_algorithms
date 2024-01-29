@@ -9,30 +9,34 @@
  *
  *Return: Returns current index..
  */
-int lomuto_partition(int *array, size_t size)
+int lomuto_partition(int *array, size_t size, int lb, int ub)
 {
-	int pivot = array[size - 1];
-	size_t i, temp;
-	int j = 0;
-
-	for (i = 1; i < size - 1; i++)
+	int *pivot, j;
+	int i, temp, *a, *b;
+	
+	pivot = array + ub;
+	for (i = j = lb; i < ub; i++)
 	{
-		if (pivot >= array[i] && array[j] > array[i])
+		if (array[i] < *pivot)
 		{
-			temp = array[j];
-			array[j] = array[i];
-			array[i] = temp;
-			print_array(array, size);
-			j += 1;
+			if (j < i)
+			{
+				a = array + i;
+				b = array + j;
+				temp = *a;
+				*a = *b;
+				*b = temp;
+				print_array(array, size);
+			}
+			j++;
 		}
 	}
-	if (size == 2 && array[0] < array[1])
-		return (j);
-	if (pivot < array[j])
+	if (array[j] > *pivot)
 	{
-		temp = array[j];
-		array[j] = pivot;
-		array[size - 1] = temp;
+		b = array + j;
+		temp = *b;
+		*b = *pivot;
+		*pivot = temp;
 		print_array(array, size);
 	}
 	return (j);
@@ -49,16 +53,23 @@ int lomuto_partition(int *array, size_t size)
  */
 void quick_sort(int *array, size_t size)
 {
-	int new_index, upper;
-
 	if (array == NULL || size < 2)
 		return;
 
 	if (size > 1)
 	{
-		new_index = lomuto_partition(array, size);
-		quick_sort(array, new_index);
-		upper = size - new_index;
-		quick_sort(array + new_index + 1, upper - 1);
+		lomuto_sort(array, size, 0, size - 1);
+	}
+}
+
+void lomuto_sort(int *array, size_t size, int lb, int ub)
+{
+	int index2;
+
+	if (ub - lb > 0)
+	{
+		index2 = lomuto_partition(array, size, lb, ub);
+		lomuto_sort(array, size, lb, index2 - 1);
+		lomuto_sort(array, size, index2 + 1, ub);
 	}
 }
